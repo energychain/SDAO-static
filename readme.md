@@ -8,6 +8,6 @@ Static SDAO content repo
 - `npm i hexo-cli -g`
 - clone this repo down and `cd` into the folder
 - run `npm install`
-- run `hexo server` or `hexo compile`
+- run `hexo server` or `hexo generate`
 
 
