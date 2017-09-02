@@ -4,13 +4,10 @@ Static SDAO content repo
 
 ## Setup
 
-- make sure [node.js](http://nodejs.org) is at version >= `6`
-- `npm i spike -g`
+- make sure [node.js](http://nodejs.org) is at version >= `7`
+- `npm i hexo-cli -g`
 - clone this repo down and `cd` into the folder
 - run `npm install`
-- run `spike watch` or `spike compile`
+- run `hexo server` or `hexo compile`
 
-## Testing
-Tests are located in `test/**` and are powered by [ava](https://github.com/sindresorhus/ava)
-- `npm install` to ensure devDeps are installed
-- `npm test` to run test suite
+

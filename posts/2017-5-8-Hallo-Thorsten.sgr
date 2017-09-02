@@ -1,9 +1,0 @@
----
-title: 'Hello Thorsten!'
-author: 'Stefan'
----
-
-extends(src='../views/_post_template.sgr')
-  block(name='content')
-    .body(md).
-      Sind zwar noch .sgr templates, müsste aber auch als Markdown funktionieren!
