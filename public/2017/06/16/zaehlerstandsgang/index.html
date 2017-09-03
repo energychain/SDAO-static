@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Abrechnung Zählerstandsgang mit dem StromDAO Business Object | STROMDAO</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Technisch handelt es sich bei der Zählerstandsgangmessung um die kontinuierliche Erfassung von tatsächlichen Zählerständen, aus denen durch einfache Umrechnung eine zeitnahe Bilanzierung und Abrechnun">
+<meta name="keywords" content="businessobject,blockchain,smartmeter,zählerstandsgang,abrechnung">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Abrechnung Zählerstandsgang mit dem StromDAO Business Object">
+<meta property="og:url" content="https://beta.stromdao.de/2017/06/16/zaehlerstandsgang/index.html">
+<meta property="og:site_name" content="STROMDAO">
+<meta property="og:description" content="Technisch handelt es sich bei der Zählerstandsgangmessung um die kontinuierliche Erfassung von tatsächlichen Zählerständen, aus denen durch einfache Umrechnung eine zeitnahe Bilanzierung und Abrechnun">
+<meta property="og:locale" content="German">
+<meta property="og:updated_time" content="2017-09-03T07:18:31.042Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Abrechnung Zählerstandsgang mit dem StromDAO Business Object">
+<meta name="twitter:description" content="Technisch handelt es sich bei der Zählerstandsgangmessung um die kontinuierliche Erfassung von tatsächlichen Zählerständen, aus denen durch einfache Umrechnung eine zeitnahe Bilanzierung und Abrechnun">
+  
+    <link rel="alternate" href="/atom.xml" title="STROMDAO" type="application/atom+xml">
+  
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="/css/styles.css">
+  
+
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="main-menu-navbar">
+      <ul class="nav navbar-nav">
+        
+          <li><a class=""
+                 href="/index.html">Start</a></li>
+        
+          <li><a class=""
+                 href="/tarif/">Stromtarif</a></li>
+        
+          <li><a class=""
+                 href="/categories/news/">Aktuelles</a></li>
+        
+      </ul>
+
+    
+      <ul class="nav navbar-nav navbar-right">
+      <!--
+        
+          <li><a href="/atom.xml" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
+        
+      -->  
+        <li>
+        <form class="form-inline" method="GET" action="/tarif/" style="padding:3px">
+			<div class="form-group">	
+			<input type="text" class="form-control" id="head_plz" name="plz" placeholder="Postleitzahl">
+			</div>
+			<button type="submit" class="btn btn-primary">Stromtarif abrufen</button>
+		</form>
+        </li>
+      </ul>
+   
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <div class="container">
+    <div class="row">
+<div class="col-md-12" style="text-align:right">
+<h1 class="blog-title"><strong>STROM</strong>DAO</h1>
+ 
+    <p class="lead blog-description">digital energy infrastructure for tomorrow.</p>
+  
+</div>
+</div>
+
+    <div class="row">
+        <div class="col-sm-8 blog-main">
+          <article id="post-zaehlerstandsgang" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 class="article-title" itemprop="name">
+      Abrechnung Zählerstandsgang mit dem StromDAO Business Object
+    </h1>
+  
+
+
+  </header>
+
+
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Technisch handelt es sich bei der Zählerstandsgangmessung um die kontinuierliche Erfassung von tatsächlichen Zählerständen, aus denen durch einfache Umrechnung eine zeitnahe Bilanzierung und Abrechnung von Strommengen erfolgen kann. Regulatorisch ist die Zählerstandsgangsmessung in der Stromnetzzugangsverordnung (StromNZV) geregelt.</p>
+<h2 id="ablauf">Ablauf</h2>
+<p><a href="https://github.com/energychain/StromDAO-BusinessObject/blob/master/smart_contracts/StromDAO-BO-SC-Commissioning.sol" target="_blank" rel="external">StromDAO-BO-Commissioning</a></p>
+<h3 id="ablesung-kontinuierlich">Ablesung (kontinuierlich)</h3>
+<p><em>SmartContract: MPRset</em></p>
+<p>Die Messpunkte schreiben fortlaufend ihre Messwerte in den für die Messdienstleistung bereitgestellten Vertrag. Zum Zeitpunkt einer Abrechnung wird ein Snapshot erzeugt über den letzten gültigen Zählerstand.</p>
+<p>Fehlende Werte durch eine gestörte Übertragung müssen nicht berücksichtig werden, da der <a href="http://127.0.0.1:8180/#/contracts/0x0000000000000000000000000000000000000008" target="_blank" rel="external">Messdienstleistungsvertrag</a> regelt, welche Aktualität notwendig ist. In der Praxis können kurzzeitige Ausfälle der Kommunikation so kompensiert werden.</p>
+<p><strong>cli 1337 --snapshot</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">Starting as 1337 0x9eB63DF62a2286aD2547E4c48157198EdfC5d470</div><div class="line">- MPSet: 0xd67F88A53B89db90665f5696EF29cc84D56a2c3A</div><div class="line">- Stromkonto: 0x90d357D6B3Bd9F0C99f93Ab171FF6aD41BBC5e87</div><div class="line">- Clearing: 0x1820eED77540f2DF6641a9F6a513C33b2E27C2CF</div><div class="line"></div><div class="line">=&gt;Store Reading</div><div class="line">Snapshot: 0x2AE937deE61A18Effb0E46978c27c7AA04280491</div><div class="line">...</div><div class="line">Snapshot: 0x45eDd1fd0d012D38632AA4457cE90B5B45c21382</div></pre></td></tr></table></figure>
+<h3 id="differenzbildung">Differenzbildung</h3>
+<p><em>SmartContract: MPRdecorate</em></p>
+<p>Aus zwei <em>MPRset</em> Verträgen wird eine Differenzablesung ermittelt. Dabei wird der jeweils niedrigere Zählerstand vom höheren Zählerstand subtrahiert und anschließend als neuer Zählerstand gepeischert. Nach Ausübung dieses Vertrages entsteht ein neues <em>MPRset</em>.</p>
+<p>Für nicht saldierende Zähler kann die Differenzbildung mittels <em>MPRdecorate</em> entfallen.</p>
+<p><strong>cli 1337 --delta --address 0x2AE937deE61A18Effb0E46978c27c7AA04280491 --bravo 0x45eDd1fd0d012D38632AA4457cE90B5B45c21382</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line">=&gt;Delta</div><div class="line">Decorator: 0x22d37456F26c8a6761D1b0653390Fa2711185cdB</div><div class="line">...</div></pre></td></tr></table></figure>
+<h3 id="ermittlung-kosten">Ermittlung: Kosten</h3>
+<p><em>SmartContract: MPRdecorate</em></p>
+<p>Bei den Kosten wird unterschieden zwischen Fixkosten, welche je Zeiteinheit anfallen, und variablen Kosten, welche nach Energiemenge berechnet werden.</p>
+<p><strong>cli 1337 --comenergy 5</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line">=&gt;Delta</div><div class="line">Decorator: 0x22d37456F26c8a6761D1b0653390Fa2711185cdB</div><div class="line"></div><div class="line">Settlement: 0xcDe03Dfcd3D515b043d926Ad615f7e3253b4A13e</div><div class="line">...</div></pre></td></tr></table></figure>
+<h3 id="settlement">Settlement</h3>
+<p><em>SmartContract: Settlement</em></p>
+<p>Nach dem Abschluss der Kostenberechnung für mittels <em>MPRdecorate</em> wird eine Verbuchung mittels <em>Settlement</em> vorbereitet.</p>
+<p><strong>cli 1337 --settle 0xcDe03Dfcd3D515b043d926Ad615f7e3253b4A13e --address 0x22d37456F26c8a6761D1b0653390Fa2711185cdB</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line">Settlement: 0xcDe03Dfcd3D515b043d926Ad615f7e3253b4A13e</div><div class="line"></div><div class="line">=&gt;Delta</div><div class="line">Decorator: 0x22d37456F26c8a6761D1b0653390Fa2711185cdB</div><div class="line">...</div></pre></td></tr></table></figure>
+<h3 id="buchungsvorlauf">Buchungsvorlauf</h3>
+<p><em>SmartContract: TXCache</em></p>
+<p>Ergebnis des <em>Settlement</em> ist eine Liste von Transaktionen (Buchungen), die im Zuge des <em>Clearing</em> auf einen Stromkonto-Vertrag angewendet werden können.</p>
+<p>Das <em>Clearing</em> kann zu einem beliebigen Zeitpunkt nach dem <em>Settlement</em> erfolgen.</p>
+<h3 id="clearing">Clearing</h3>
+<p><em>SmartContract: Clearing</em></p>
+<p><strong>cli 1337 --clearing 0x0d14AB3d3aCD0C925C41D31e061b83B5B55A64B5</strong></p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="https://beta.stromdao.de/2017/06/16/zaehlerstandsgang/" data-id="cj74euzk5000ucgnvcmian0de" class="article-share-link">
+        <i class="fa fa-share"></i> Teilen
+      </a>
+      
+        <div class="article-meta">
+		<div class="article-datetime">
+  <a href="/2017/06/16/zaehlerstandsgang/" class="article-date"><time datetime="2017-06-16T07:16:49.000Z" itemprop="datePublished">16.06.2017</time></a>
+</div>
+
+		
+		
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/news/">news</a>
+  </div>
+
+
+	  </div>
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/abrechnung/">abrechnung</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blockchain/">blockchain</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/businessobject/">businessobject</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/smartmeter/">smartmeter</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/zahlerstandsgang/">zählerstandsgang</a></li></ul>
+
+
+    </footer>
+  </div>
+  
+    
+<ul id="article-nav" class="nav nav-pills nav-justified">
+  
+  <li role="presentation">
+    <a href="/2017/06/03/Mythen-und-Realitaet/" id="article-nav-older" class="article-nav-link-wrap">
+      <i class="fa fa-chevron-left pull-left"></i>
+      <span class="article-nav-link-title">Mythen und Realität der Blockchain für die Energiewirtschaft</span>
+    </a>
+  </li>
+  
+  
+  <li role="presentation">
+    <a href="/2017/06/29/anleitung-zsg/" id="article-nav-newer" class="article-nav-link-wrap">
+      <span class="article-nav-link-title">Zählerstandsgangmessung</span>
+      <i class="fa fa-chevron-right pull-right"></i>
+    </a>
+  </li>
+  
+</ul>
+
+
+  
+</article>
+
+
+
+
+        </div>
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          
+  <div class="sidebar-module sidebar-module-inset">
+  <h4>Über</h4>
+  <p>Mit Hilfe der Blockchain Technologie haben wir eine dezentrale und autonome Organisation aufgebaut (DAO), bei der neue Stromprodukte entwickelt werden. Unser Mechanismus zur <a href="http://docs.stromdao.de/pdf/en_consensus_system.pdf">Konsensfindung</a> für den Energiemarkt unterstützt die Marktkommunikation aller Akteure. </p>
+
+</div>
+
+
+  
+  <div class="sidebar-module">
+    <h4>Assets</h4>	    
+    <div class="btn-group-vertical" role="group" aria-label="Assets der Stromdao" >             
+          <a class="btn btn-default" style="text-align:left;" href="http://docs.stromdao.de/pdf/en_consensus_system.pdf" title="Marktkommunikation für Konsens in der Energiewirtschaft"><img src="/assets/consens.png">&nbsp; Konsens System</a>
+          <a class="btn btn-default" style="text-align:left;" href="https://fury.network/" title="Entwicklungsumgebung für die Energie Blockchain"><img src="/assets/fury32.png">&nbsp;fury.network</a>
+          <a class="btn btn-default" style="text-align:left;" href="https://github.com/energychain/StromDAO-BusinessObject" title="Open Source Energy Blockchain Zugriff"> <img src="/assets/github.png">&nbsp;OpenSource: Business Object</a>
+   </div>
+  </div>
+
+
+  
+  <div class="sidebar-module">
+    <h4>Tag Cloud</h4>
+    <p class="tagcloud">
+      <a href="/tags/abrechnung/" style="font-size: 13.33px;">abrechnung</a> <a href="/tags/blockchain/" style="font-size: 20px;">blockchain</a> <a href="/tags/businessobject/" style="font-size: 20px;">businessobject</a> <a href="/tags/community/" style="font-size: 13.33px;">community</a> <a href="/tags/demo/" style="font-size: 10px;">demo</a> <a href="/tags/development/" style="font-size: 10px;">development</a> <a href="/tags/edifact/" style="font-size: 10px;">edifact</a> <a href="/tags/energiewirtschaft/" style="font-size: 16.67px;">energiewirtschaft</a> <a href="/tags/entwicklung/" style="font-size: 10px;">entwicklung</a> <a href="/tags/fury/" style="font-size: 10px;">fury</a> <a href="/tags/grunstrom/" style="font-size: 10px;">grünstrom</a> <a href="/tags/hybridstrommarkt/" style="font-size: 10px;">hybridstrommarkt</a> <a href="/tags/infrastruktur/" style="font-size: 10px;">infrastruktur</a> <a href="/tags/konsens/" style="font-size: 10px;">konsens</a> <a href="/tags/marktdesign/" style="font-size: 10px;">marktdesign</a> <a href="/tags/marktkommunikation/" style="font-size: 13.33px;">marktkommunikation</a> <a href="/tags/mscons/" style="font-size: 10px;">mscons</a> <a href="/tags/mythen/" style="font-size: 10px;">mythen</a> <a href="/tags/newsletter/" style="font-size: 10px;">newsletter</a> <a href="/tags/regional/" style="font-size: 10px;">regional</a> <a href="/tags/smartcontract/" style="font-size: 10px;">smartcontract</a> <a href="/tags/smartcontracts/" style="font-size: 10px;">smartcontracts</a> <a href="/tags/smartmeter/" style="font-size: 16.67px;">smartmeter</a> <a href="/tags/stromkonto/" style="font-size: 13.33px;">stromkonto</a> <a href="/tags/strommarkt/" style="font-size: 10px;">strommarkt</a> <a href="/tags/stromnzv/" style="font-size: 10px;">stromnzv</a> <a href="/tags/stromtogo/" style="font-size: 10px;">stromtogo</a> <a href="/tags/tarif/" style="font-size: 10px;">tarif</a> <a href="/tags/youtube/" style="font-size: 13.33px;">youtube</a> <a href="/tags/zahlerstandsgang/" style="font-size: 13.33px;">zählerstandsgang</a>
+    </p>
+  </div>
+
+
+
+        </div>
+    </div>
+  </div>
+  <footer class="blog-footer">
+  <div class="container">
+    <div id="footer-info" class="inner">
+      &copy; 2017 StromDAO Limited |
+      <a href="/impressum/index.html">Impressum und rechtliche Hinweise</a>
+    </div>
+  </div>
+</footer>
+<script type="text/javascript">
+	  var _paq = _paq || [];
+	  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+	  _paq.push(['trackPageView']);
+	  _paq.push(['enableLinkTracking']);
+	  (function() {
+		var u="//app.stromdao.de/stats/piwik/";
+		_paq.push(['setTrackerUrl', u+'piwik.php']);
+		_paq.push(['setSiteId', '2']);
+		var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+		g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+	  })();
+</script>
+<script src="https://cdn.rawgit.com/energychain/StromDAO-BusinessObject/master/dist/loader.js"></script>
+
+  
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" integrity="sha384-8gBf6Y4YYq7Jx97PIqmTwLPin4hxIzQw5aDmUg/DDhul9fFpbbLcLh3nTIIDJKhx" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+
+<script src="/js/script.js"></script>
+  
+  
+</body>
+</html>

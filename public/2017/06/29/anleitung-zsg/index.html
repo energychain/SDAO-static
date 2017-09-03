@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Zählerstandsgangmessung | STROMDAO</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Einführung Teil 1 Erhalten Sie eine praktische Einführung in die Verwendung der Blockchain Technologie für die Energiewirtschaft. Es werden die Smart Contracts, sowie die Business Logik vorgestellt. M">
+<meta name="keywords" content="businessobject,smartmeter,zählerstandsgang,abrechnung,smartcontract,stromnzv,entwicklung">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Zählerstandsgangmessung">
+<meta property="og:url" content="https://beta.stromdao.de/2017/06/29/anleitung-zsg/index.html">
+<meta property="og:site_name" content="STROMDAO">
+<meta property="og:description" content="Einführung Teil 1 Erhalten Sie eine praktische Einführung in die Verwendung der Blockchain Technologie für die Energiewirtschaft. Es werden die Smart Contracts, sowie die Business Logik vorgestellt. M">
+<meta property="og:locale" content="German">
+<meta property="og:updated_time" content="2017-09-03T07:25:36.356Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Zählerstandsgangmessung">
+<meta name="twitter:description" content="Einführung Teil 1 Erhalten Sie eine praktische Einführung in die Verwendung der Blockchain Technologie für die Energiewirtschaft. Es werden die Smart Contracts, sowie die Business Logik vorgestellt. M">
+  
+    <link rel="alternate" href="/atom.xml" title="STROMDAO" type="application/atom+xml">
+  
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="/css/styles.css">
+  
+
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="main-menu-navbar">
+      <ul class="nav navbar-nav">
+        
+          <li><a class=""
+                 href="/index.html">Start</a></li>
+        
+          <li><a class=""
+                 href="/tarif/">Stromtarif</a></li>
+        
+          <li><a class=""
+                 href="/categories/news/">Aktuelles</a></li>
+        
+      </ul>
+
+    
+      <ul class="nav navbar-nav navbar-right">
+      <!--
+        
+          <li><a href="/atom.xml" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
+        
+      -->  
+        <li>
+        <form class="form-inline" method="GET" action="/tarif/" style="padding:3px">
+			<div class="form-group">	
+			<input type="text" class="form-control" id="head_plz" name="plz" placeholder="Postleitzahl">
+			</div>
+			<button type="submit" class="btn btn-primary">Stromtarif abrufen</button>
+		</form>
+        </li>
+      </ul>
+   
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <div class="container">
+    <div class="row">
+<div class="col-md-12" style="text-align:right">
+<h1 class="blog-title"><strong>STROM</strong>DAO</h1>
+ 
+    <p class="lead blog-description">digital energy infrastructure for tomorrow.</p>
+  
+</div>
+</div>
+
+    <div class="row">
+        <div class="col-sm-8 blog-main">
+          <article id="post-anleitung-zsg" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 class="article-title" itemprop="name">
+      Zählerstandsgangmessung
+    </h1>
+  
+
+
+  </header>
+
+
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1>Einführung Teil 1</h1>
+<p>Erhalten Sie eine praktische Einführung in die Verwendung der Blockchain Technologie für die Energiewirtschaft. Es werden die Smart Contracts, sowie die Business Logik vorgestellt.</p>
+<p>Mit Hilfe von praktischen Snappins können Sie direkt in den Maschinenraum schauen und lernen so die Besonderheiten der Blockchain als Konsensraum näher kennen.</p>
+<h2 id="12-abs-4-der-stromnzv">§ 12 Abs. 4 der StromNZV</h2>
+<blockquote>
+<p><strong>Soweit es für die Umsetzung eines variablen Tarifs im Sinne von § 40 Absatz 5 Satz 1 des Energiewirtschaftsgesetzes erforderlich ist, haben Netzbetreiber Netznutzern eine Bilanzierung und Abrechnung auf Basis von Zählerstandsgängen für diejenigen Einspeise- und Entnahmestellen zu ermöglichen, deren Einspeise- und Entnahmeverhalten mit intelligenten Messsystemen im Sinne des Messstellenbetriebsgesetzes ermittelt wird.</strong></p>
+</blockquote>
+<p>(Quelle: <a href="https://www.gesetze-im-internet.de/stromnzv/__12.html" target="_blank" rel="external">https://www.gesetze-im-internet.de/stromnzv/__12.html</a>)</p>
+<p>Die <strong>STROM</strong>DAO hat im Business Object für die Energy Blockchain die geeigneten Verfahren geschaffen, um eine zeitnahe Bilanzierung von Stromverbrauchs oder Stromerzeugung gewährleisten. Eine Sammlung von Smart Contracts werden mit Hilfe von Business-Regeln in die bestehenden Prozesse integriert oder bilden eine neue Wertschöpfungskette im autarken Betrieb.</p>
+<h2 id="zählerdaten">Zählerdaten</h2>
+<p>In der Energy Blockchain der <strong>STROM</strong>DAO haben Zählpunkte die Möglichkeit selbständig ihre Werte zu setzen. Hierzu wird eine Transaktion ausgeführt, die mit dem privaten Schlüssel des Zählpunktes signiert wird.</p>
+<p>Diese Transaktion kann ausgeführt werden von:</p>
+<ul>
+<li>Messdatensystem</li>
+<li>Simulationsumgebung</li>
+<li>Letztverbraucher / Erzeuger</li>
+<li>MS CONS (Metered Services Consumption report message)</li>
+<li>Abrechnungssystem (nicht empfohlen!)</li>
+<li>Externer Messdienstleister</li>
+<li>SmartMeter Gateway</li>
+</ul>
+<p>Im folgenden wird das Business Object verwendet, um zunächst Zählerstände in die Blockchain zu schreiben. Dies soll Sie vertraut im Umgang mit den Werkzeugen machen.</p>
+<p>Zählerdaten Demo (Snappin): <a href="https://jsfiddle.net/zoernert/86kug7uy/31/?utm_source=website&amp;utm_medium=embed&amp;utm_campaign=86kug7uy" target="_blank" rel="external">JS Fiddle öffnen</a></p>
+<h3 id="was-im-hintergrund-geschieht">Was im Hintergrund geschieht</h3>
+<p>Sobald Sie die Demo Seite für die Zählerdaten geladen haben, wurde im Hintergrund ein neues Schlüsselpaar (Privater Schlüssel/Öffentlicher Schlüssel) erstellt. Aus dem öffentlichen Schlüssel wurde eine Ethereum Adresse abgeleitet, welche nun im Feld <em>BC Address</em> angzeigt wird, mit 0x beginnt und insgesamt 42 Zeichen lang ist.</p>
+<p>Es ist sichergestellt, dass nur Sie mit ihrem privaten Schlüssel eine Transaktion signieren können, die zu dieser öffentlichen Adresse passt. Jeder Teilnehmer der Blockchain kann somit Transaktionen eindeutig einem privaten Schlüssel zuordnen, ohne diesen selbst zu kennen.</p>
+<h3 id="zählerstand-schreiben-abrufen">Zählerstand schreiben/abrufen</h3>
+<p>Tragen Sie nun unter <em>Reading</em> im Eingabefeld einen Zahlenwert ein und klicken Sie auf <em>Update</em>. Etwa 30 Sekunden später wird Eine neue Box erscheinen, welche einen Transaktionshash enthält. Ein Transaktionshash kann als Nachweis für die Durchführung einer Transaktion gesehen werden. Alle Teilnehmer der Blockchain können prüfen, ob dieser Hash in der Blockchain als Konsens eingearbeitet wurde - oder nicht.</p>
+<p>Mit der Übermittlung der ersten Ablesung, haben Sie bereits den Konsens verändert, der durch die Blockchain sichergestellt wird. Smart Contracts, Nodes, User der Blockchain wissen nun, dass jemand einen Messwert geschrieben hat. Wer dieser <em>Jemand</em> ist, kann man nicht nachvollziehen.</p>
+<p>Klicken Sie nun erneut auf Lookup. Es sollte Ihr Zählerstand und der Zeitstempel angezeigt werden.</p>
+<p>Probieren Sie nun mit einmal einen Lookup mit folgenden Adressen aus:</p>
+<ul>
+<li>0xAb93aA1C714FeB6D3B16DeF77cB9D25b291E5c9C</li>
+<li>0x83F8B15eb816284ddcF2ff005Db7a19196d86ae1</li>
+<li>0xeDF09275b593F44E896b0deee40FAdED91d76585</li>
+</ul>
+<h3 id="fragen-zur-vertiefung">Fragen zur Vertiefung</h3>
+<ul>
+<li>Wie können Sie herausbekommen, wer 0xAb93aA1C714FeB6D3B16DeF77cB9D25b291E5c9C ist?</li>
+<li>Können Sie selbst Messwerte als 0xAb93aA1C714FeB6D3B16DeF77cB9D25b291E5c9C schreiben? (Probieren Sie es aus…)</li>
+<li>Wie sieht der Algorithmus aus, um aus Zählerstandsdaten einen abrechenbaren Wert zu machen?</li>
+</ul>
+<hr>
+<h1>Einführung Teil 2</h1>
+<p>Im Teil 1 dieser Einführung wurden die Grundlagen geschaffen, mit denen Zählerstände sicher und unveränderbar in die <strong>STROM</strong>DAO Blockchain geschrieben werden. Verwendet wurde das Business Object, welches eine Abstraktion zwischen dem Protokoll der Blockchain Technologie als Konsensinstrument und den Prozessen (Ablesung, Protokollierung,…) als Werkzeug zur Veränderung des Konsens.</p>
+<h2 id="settlement">Settlement</h2>
+<p>Im Kontext der Energy Blockchain wird die Bestimmung der abrechnungsrelevanten Strommenge beschrieben durch die Differenz von zwei Zählerständen des gleichen Zählers.</p>
+<p><code>Settlement = Zählerstand 2 - Zählerstand 1</code></p>
+<p>Zu beachten ist, dass folgende Settlements nicht mehr einen Zählerstand beachten dürfen, die vor <code>Zählerstand 2</code> geschrieben wurden. Dies ist bei Verwendung der Blockchain Technologie gegeben, da die gebildeten Blöcke immer eine aufsteigende Reihenfolge haben und somit die Zählerstände in chronologischer Reihenfolge vorliegen.</p>
+<h2 id="clearing">Clearing</h2>
+<p>Dem Settlement (der Bestimmung der Energiemenge) angeschlossen ist das eigentliche Clearing. Aus der Energiemenge wird ein Geldbetrag ermittelt, welcher in der Gegenrichtung zur Stromlieferung erfolgen.</p>
+<h2 id="smartcontract">SmartContract</h2>
+<p>Transaktionen, welche in die Blockchain aufgenommen werden, haben immer das Ziel, den Konsens zu verändern. Welche Veränderung eine bestimmte Transaktion tatsächlich bewirkt, bestimmen die Regeln in einem SmartContract.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">contract SingleMeterClearing is owned &#123;</div><div class="line">	</div><div class="line">	mapping(<span class="function"><span class="params">address</span>=&gt;</span>uint256) public share;</div><div class="line">	uint256 public total_shares=<span class="number">0</span>;</div><div class="line">	TxHandler public stromkonto;</div><div class="line">	MPReading public reading;</div><div class="line">	address public meterpoint;</div><div class="line">	uint256 public last_reading;</div><div class="line">	uint256 public energyCost;</div><div class="line">	bool public becomeTo;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">SingleMeterClearing</span>(<span class="params">TxHandler _stromkonto,MPReading _reading,address _meterpoint,uint256 _cost,bool _becomeTo</span>) </span>&#123;</div><div class="line">		stromkonto=_stromkonto;</div><div class="line">		meterpoint=_meterpoint;</div><div class="line">		reading=_reading;</div><div class="line">		energyCost=_cost;</div><div class="line">		becomeTo=_becomeTo;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">clearing</span>(<span class="params"></span>) <span class="title">onlyOwner</span> </span>&#123;</div><div class="line">			uint256 time;</div><div class="line">			uint256 power;		</div><div class="line">			(time,power)=reading.readings(meterpoint);</div><div class="line">			<span class="keyword">for</span>(uint256 i=<span class="number">0</span>;i&lt;accounts.length;i++) &#123;</div><div class="line">				uint256 factor=share[accounts[i]];</div><div class="line">				<span class="keyword">if</span>(becomeTo) &#123;</div><div class="line">					stromkonto.addTx(accounts[i],address(<span class="keyword">this</span>),((power-last_reading)*energyCost)*factor,(power-last_reading)*factor);</div><div class="line">				&#125; <span class="keyword">else</span> &#123;</div><div class="line">					stromkonto.addTx(address(<span class="keyword">this</span>),accounts[i],((power-last_reading)*energyCost)*factor,(power-last_reading)*factor);</div><div class="line">				&#125;			</div><div class="line">			&#125;</div><div class="line">			last_reading=power;</div><div class="line">			Cleared(power,accounts.length);</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Der vollständige Vertrag ist auf <a href="https://github.com/energychain/StromDAO-BusinessObject/blob/master/smart_contracts/StromDAO-BO-SC-Commissioning.sol" target="_blank" rel="external">GitHub</a> veröffentlicht.</p>
+<h2 id="factory-contracts">Factory Contracts</h2>
+<p>In der <strong>STROM</strong>DAO Energy Blockchain existieren einige spezielle SmartContracts, welche lediglich das Ziel haben, dass ein bestimmter anderer SmartContract damit erstellt werden kann.</p>
+<p>Als Nutzer der Energy Blockchain kann man durch Verwendung der Factory SmartContracts sicherstellen, dass die Regeln der resultierenden Verträge immer dem Regelwerk der Factory entsprechen.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">contract SingleMeterClearingFactory &#123;</div><div class="line"></div><div class="line">	MPReading public reading;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">SingleMeterClearingFactory</span>(<span class="params">MPReading _reading</span>) </span>&#123;</div><div class="line">		reading=_reading;		</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">build</span>(<span class="params">TxHandler _stromkonto,address _meterpoint,uint256 _cost,bool _becomeTo</span>) <span class="title">returns</span>(<span class="params">SingleMeterClearing</span>) </span>&#123;</div><div class="line">			SingleMeterClearing smc = <span class="keyword">new</span> SingleMeterClearing(_stromkonto,reading,_meterpoint,_cost,_becomeTo);</div><div class="line">			smc.transferOwnership(msg.sender);			</div><div class="line">			<span class="keyword">return</span> smc;		</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Diese SingleMeterClearingFactory wurde vom der <strong>STROM</strong>DAO unter der Adresse <code>0x7b49a618D88949C8f594149616Ce155b314DfbE5</code> veröffentlicht und wird vom Business Objekt verwerndet.</p>
+<h2 id="stromkonto-smartcontract">Stromkonto SmartContract</h2>
+<p>Aufgabe des Stromkonto SmartContract ist es Buchungssätze entsprechend Konten zuzuordnen. Jeder Buchugssatz besteht mindestens aus einem <code>Von</code>, einem <code>An</code> und einem <code>Betrag</code>, wobei <code>Von</code>/<code>An</code> eine beliebige Blockchain Adresse sein kann.</p>
+<p>Der Stromkonto SmartContract führt für jede Adresse eine Soll und eine Haben Summe, die zu beide zu Beginn auf 0 gesetzt sind.</p>
+<p>Buchungssatz:
+<code>Von AdresseA an AdresseB Betrag X</code></p>
+<p>Wird folgender Code ausgeführt:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line">		balancesSoll[_von]+=_betrag;		</div><div class="line">		balancesHaben[_an]+=_betrag;		</div><div class="line">...</div></pre></td></tr></table></figure>
+<p>D.h. gelöst wird die Herausforderung, dass eine Blockchain keine negativen Werte (Besitz) anzeigen kann, da in einem Konsenssystem etwas nicht-nicht vorhanden sein kann.</p>
+<h3 id="fragen-zur-vertiefung-v2">Fragen zur Vertiefung</h3>
+<ul>
+<li>Wie kann man den Saldo eines Stromkonto ermitteln?</li>
+<li>Entspricht eine Adresse des Zählers immer auch der Adresse des Stromkontos?</li>
+<li>Benötigt man historische Messdaten?</li>
+<li>Können Verbräuche geschätzt werden? (Welche Konsequenz hat dies?)</li>
+</ul>
+<hr>
+<h1>Einführung Teil 3</h1>
+<p>Im Teil 2 dieser Einführung wurden SmartContracts als Regelwerke vorgestellt, welche den Konsens in der  <strong>STROM</strong>DAO Energy Blockchain verändern.</p>
+<p>In diesem Teil wird nun das <a href="https://www.npmjs.com/package/stromdao-businessobject" target="_blank" rel="external">Business Object</a> verwendet, um aus den Zählerständen (Teil1) unter Anwendung der SmartContracts (Teil2) tatsächliche Buchungen zu machen.</p>
+<h2 id="stromkonto-optional">Stromkonto (optional)</h2>
+<p>Damit wir die Buchungen für die Stromkunden vornehmen können, wird ein Stromkonto benötigt. Hierzu existiert ein Factory Smart Contract, der das Anlegen eines Stromkontovertrages übernimmt und Sie im Anschluss zum Eigentümer des Vertrages macht.</p>
+<p>Stromkonto anlegen (Snappin): <a href="https://jsfiddle.net/zoernert/dhrf18um/5/?utm_source=website&amp;utm_medium=embed&amp;utm_campaign=dhrf18um" target="_blank" rel="external">JS Fiddle öffnen</a></p>
+<p><strong>Hinweis:</strong>
+Für diese vereinfachte Einführung wird ein fester Stromkontovertrag mit der Addresse <code>0x19BF166624F485f191d82900a5B7bc22Be569895</code> verwendet. Dieser spezielle Stromkontovertrag besitzt einige zusätzliche Merkmale für Entwickler und benötigt <em>keine Berechtigungen</em>! (Der Aufbau von Berechtigungsstrukturen ist nicht Bestandteil dieser Einführung).</p>
+<h2 id="settlement-clearing-anlegen">Settlement/Clearing anlegen</h2>
+<p>In dieser Einführung verwenden wir eine vereinfachte Abrechnung, bei der eine direkte Umrechnung von Strommenge in Abrechnungsbetrag angenommen wird.</p>
+<p>Clearing anlegen (Snappin): <a href="https://jsfiddle.net/smuemd/ma4kwx8e/" target="_blank" rel="external">JS Fiddle öffnen</a></p>
+<p>Merken Sie sich nach dem Anlegen Ihres Clearing auch diese Adresse. Selbstverständlich können Sie alternativ zu Ihrer eigenen Adresse (s.h. Teil 1), auch eine andere (gültige) Adresse als <code>MeterPoint</code> angeben.</p>
+<h2 id="zwischenstand">Zwischenstand</h2>
+<p>Sie sollten jetzt insgesamt 3 Adressen und deren Bedeutung kennen:</p>
+<ol>
+<li>Stromkonto</li>
+<li>Settlement/Clearing</li>
+<li>MeterPoint</li>
+</ol>
+<p>Diese 3 Adressen sind nun <em>verdrahtet</em> über das Regelwerk, das sich hinter den jeweiligen SmartContracts verbirgt. Sie haben das <strong>STROM</strong>DAO Business Object verwendet, um diese Verdrahtung vorzunehmen.</p>
+<h2 id="dokumentation">Dokumentation</h2>
+<p>Die Dokumentation zum Business Object finden Sie unter <a href="http://docs.stromdao.de/code/" target="_blank" rel="external">http://docs.stromdao.de/code/</a> . Bislang zum Einsatz kamen die Objekte:</p>
+<ul>
+<li><strong>MPR</strong> = MeterPointReading (in Teil 1)</li>
+<li><strong>Stromkonto</strong></li>
+<li><strong>SingleClearing</strong></li>
+<li><strong>StromkontoProxyFactory</strong></li>
+<li><strong>SingleClearingFactory</strong></li>
+</ul>
+<h2 id="introspect">Introspect</h2>
+<p>Neben der Verwendung in eigenen Anwendungen, können die Objekte und Methoden des Business Objects auch über die <a href="https://demo.stromdao.de/introspect.html" target="_blank" rel="external">Introspect Seite</a> aufgerufen werden. Theoretisch könnte der gesamte End-To-End Test damit realisiert werden.</p>
+<p>Da die Introspect Seite auf einem Server der <strong>STROM</strong>DAO gehostet ist; zur Veranschaulichung der Beispiele jedoch der Dienst von <em>JS Fiddle</em> genutzt wurde, wird ihr privater Schlüssel beim Aufruf ein anderer sein.</p>
+<p>Dies führt dazu, dass Sie Zählerstände mit einer anderen Adresse signieren und nicht Eigentümer des Stromkonto sowie des Clearings sind.</p>
+<p>Probieren Sie die Objekte und Methoden gerne noch einmal mit Introspect aus, um mit einer der wichtigsten Eigenschaften der Blockchain vertraut zu werden: Dezentraler Konsens.</p>
+<h2 id="end-to-end-test">End-To-End Test</h2>
+<p>End-To-End Test (Snappin): <a href="https://jsfiddle.net/zoernert/rr90uqdq/6/?utm_source=website&amp;utm_medium=embed&amp;utm_campaign=rr90uqdq" target="_blank" rel="external">JS Fiddle öffnen</a></p>
+<p>Auf dieser Seite können Sie nun Zählerstände eingeben. Dann ein Settlement/Clearing durchführen und letztendlich einzelne Transaktionen zwischen zwei Adressen verbuchen.</p>
+<p><strong>TIPP</strong> Es wird keine automatische Aktualisierung durchgeführt. Sie müssen auf aktualisieren klicken :)</p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="https://beta.stromdao.de/2017/06/29/anleitung-zsg/" data-id="cj74euzjr000ecgnv4pbxipsm" class="article-share-link">
+        <i class="fa fa-share"></i> Teilen
+      </a>
+      
+        <div class="article-meta">
+		<div class="article-datetime">
+  <a href="/2017/06/29/anleitung-zsg/" class="article-date"><time datetime="2017-06-29T07:23:36.000Z" itemprop="datePublished">29.06.2017</time></a>
+</div>
+
+		
+		
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/news/">news</a>
+  </div>
+
+
+	  </div>
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/abrechnung/">abrechnung</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/businessobject/">businessobject</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/entwicklung/">entwicklung</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/smartcontract/">smartcontract</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/smartmeter/">smartmeter</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/stromnzv/">stromnzv</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/zahlerstandsgang/">zählerstandsgang</a></li></ul>
+
+
+    </footer>
+  </div>
+  
+    
+<ul id="article-nav" class="nav nav-pills nav-justified">
+  
+  <li role="presentation">
+    <a href="/2017/06/16/zaehlerstandsgang/" id="article-nav-older" class="article-nav-link-wrap">
+      <i class="fa fa-chevron-left pull-left"></i>
+      <span class="article-nav-link-title">Abrechnung Zählerstandsgang mit dem StromDAO Business Object</span>
+    </a>
+  </li>
+  
+  
+  <li role="presentation">
+    <a href="/2017/07/05/newsletter/" id="article-nav-newer" class="article-nav-link-wrap">
+      <span class="article-nav-link-title">Newsletter der STROMDAO</span>
+      <i class="fa fa-chevron-right pull-right"></i>
+    </a>
+  </li>
+  
+</ul>
+
+
+  
+</article>
+
+
+
+
+        </div>
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          
+  <div class="sidebar-module sidebar-module-inset">
+  <h4>Über</h4>
+  <p>Mit Hilfe der Blockchain Technologie haben wir eine dezentrale und autonome Organisation aufgebaut (DAO), bei der neue Stromprodukte entwickelt werden. Unser Mechanismus zur <a href="http://docs.stromdao.de/pdf/en_consensus_system.pdf">Konsensfindung</a> für den Energiemarkt unterstützt die Marktkommunikation aller Akteure. </p>
+
+</div>
+
+
+  
+  <div class="sidebar-module">
+    <h4>Assets</h4>	    
+    <div class="btn-group-vertical" role="group" aria-label="Assets der Stromdao" >             
+          <a class="btn btn-default" style="text-align:left;" href="http://docs.stromdao.de/pdf/en_consensus_system.pdf" title="Marktkommunikation für Konsens in der Energiewirtschaft"><img src="/assets/consens.png">&nbsp; Konsens System</a>
+          <a class="btn btn-default" style="text-align:left;" href="https://fury.network/" title="Entwicklungsumgebung für die Energie Blockchain"><img src="/assets/fury32.png">&nbsp;fury.network</a>
+          <a class="btn btn-default" style="text-align:left;" href="https://github.com/energychain/StromDAO-BusinessObject" title="Open Source Energy Blockchain Zugriff"> <img src="/assets/github.png">&nbsp;OpenSource: Business Object</a>
+   </div>
+  </div>
+
+
+  
+  <div class="sidebar-module">
+    <h4>Tag Cloud</h4>
+    <p class="tagcloud">
+      <a href="/tags/abrechnung/" style="font-size: 13.33px;">abrechnung</a> <a href="/tags/blockchain/" style="font-size: 20px;">blockchain</a> <a href="/tags/businessobject/" style="font-size: 20px;">businessobject</a> <a href="/tags/community/" style="font-size: 13.33px;">community</a> <a href="/tags/demo/" style="font-size: 10px;">demo</a> <a href="/tags/development/" style="font-size: 10px;">development</a> <a href="/tags/edifact/" style="font-size: 10px;">edifact</a> <a href="/tags/energiewirtschaft/" style="font-size: 16.67px;">energiewirtschaft</a> <a href="/tags/entwicklung/" style="font-size: 10px;">entwicklung</a> <a href="/tags/fury/" style="font-size: 10px;">fury</a> <a href="/tags/grunstrom/" style="font-size: 10px;">grünstrom</a> <a href="/tags/hybridstrommarkt/" style="font-size: 10px;">hybridstrommarkt</a> <a href="/tags/infrastruktur/" style="font-size: 10px;">infrastruktur</a> <a href="/tags/konsens/" style="font-size: 10px;">konsens</a> <a href="/tags/marktdesign/" style="font-size: 10px;">marktdesign</a> <a href="/tags/marktkommunikation/" style="font-size: 13.33px;">marktkommunikation</a> <a href="/tags/mscons/" style="font-size: 10px;">mscons</a> <a href="/tags/mythen/" style="font-size: 10px;">mythen</a> <a href="/tags/newsletter/" style="font-size: 10px;">newsletter</a> <a href="/tags/regional/" style="font-size: 10px;">regional</a> <a href="/tags/smartcontract/" style="font-size: 10px;">smartcontract</a> <a href="/tags/smartcontracts/" style="font-size: 10px;">smartcontracts</a> <a href="/tags/smartmeter/" style="font-size: 16.67px;">smartmeter</a> <a href="/tags/stromkonto/" style="font-size: 13.33px;">stromkonto</a> <a href="/tags/strommarkt/" style="font-size: 10px;">strommarkt</a> <a href="/tags/stromnzv/" style="font-size: 10px;">stromnzv</a> <a href="/tags/stromtogo/" style="font-size: 10px;">stromtogo</a> <a href="/tags/tarif/" style="font-size: 10px;">tarif</a> <a href="/tags/youtube/" style="font-size: 13.33px;">youtube</a> <a href="/tags/zahlerstandsgang/" style="font-size: 13.33px;">zählerstandsgang</a>
+    </p>
+  </div>
+
+
+
+        </div>
+    </div>
+  </div>
+  <footer class="blog-footer">
+  <div class="container">
+    <div id="footer-info" class="inner">
+      &copy; 2017 StromDAO Limited |
+      <a href="/impressum/index.html">Impressum und rechtliche Hinweise</a>
+    </div>
+  </div>
+</footer>
+<script type="text/javascript">
+	  var _paq = _paq || [];
+	  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+	  _paq.push(['trackPageView']);
+	  _paq.push(['enableLinkTracking']);
+	  (function() {
+		var u="//app.stromdao.de/stats/piwik/";
+		_paq.push(['setTrackerUrl', u+'piwik.php']);
+		_paq.push(['setSiteId', '2']);
+		var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+		g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+	  })();
+</script>
+<script src="https://cdn.rawgit.com/energychain/StromDAO-BusinessObject/master/dist/loader.js"></script>
+
+  
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" integrity="sha384-8gBf6Y4YYq7Jx97PIqmTwLPin4hxIzQw5aDmUg/DDhul9fFpbbLcLh3nTIIDJKhx" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+
+<script src="/js/script.js"></script>
+  
+  
+</body>
+</html>
