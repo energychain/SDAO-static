@@ -1,5 +1,5 @@
 ---
-title: Mythen und Realitaet der Blockchain für die Energiewirtschaft
+title: Mythen und Realität der Blockchain für die Energiewirtschaft
 date: 2017-06-03 10:43:43
 category: news
 tags:
