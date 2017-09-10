@@ -1,7 +1,7 @@
 ---
-title: Digitalisierung der Energiewirtschaft
+title: BDEW-Forum Digitalisierung der Energiewirtschaft (Event)
 category: news
-date: 2017-06-29 09:23:36
+date: 2017-09-10 10:23:49
 tags:
 - digitalisierung
 - veranstaltung
