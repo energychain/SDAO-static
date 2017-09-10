@@ -10,4 +10,4 @@ all:  generate commit
 
 generate: ;hexo generate;
 
-commit: ;git add -A && git commit -a && git push;
+commit: ;git add -A && git commit -a && git push && git push public;
