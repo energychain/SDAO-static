@@ -9,6 +9,7 @@ tags:
 - abrechnung
 - stromtarif
 - entwicklung
+- energiedatenmanagement
 ---
 Die Rahmenbedingungen der elektronischen Markkommunikation verändertn sich besonders an der Schnittstelle zu Letztverbrauchern und Kleinerzeugern. Auf Basis der Energy Blockchain kann ein Interimsmodell geschaffen werden, welches nahtlos in die bestehenden Prozesse integriert wird. Ausgehend von der Messlokation werden individuelle Tarifmodelle entwickelt.
 
