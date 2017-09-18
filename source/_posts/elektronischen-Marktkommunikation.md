@@ -10,7 +10,7 @@ tags:
 - stromtarif
 - entwicklung
 ---
-Die Rahmenbedingungen der elektronischen Markkommunikation verändertn sich besonders an der Schnittstelle zu Letztverbrauchern und Kleinerzeugern. Auf Basis der Energy Blockchain kann ein Interimsmodell geschaffen werden, welches nahtlos in die bestehenden Prozesse integriert werden kann. Ausgehend von der Messlokation können individuelle Tarifmodelle entwickelt werden.
+Die Rahmenbedingungen der elektronischen Markkommunikation verändertn sich besonders an der Schnittstelle zu Letztverbrauchern und Kleinerzeugern. Auf Basis der Energy Blockchain kann ein Interimsmodell geschaffen werden, welches nahtlos in die bestehenden Prozesse integriert wird. Ausgehend von der Messlokation werden individuelle Tarifmodelle entwickelt.
 
 Zukünftige Elektronischen Marktkommunikation erfordert  hochflexible und individualisierbare Bilanzierungsprozesse, die danke des STROMDAO Business Objects vereinfacht werden.
 
