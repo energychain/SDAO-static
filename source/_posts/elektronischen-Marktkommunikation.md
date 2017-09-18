@@ -1,5 +1,5 @@
 ---
-title: Elektronischen Marktkommunikation
+title: Elektronische Marktkommunikation
 category: news
 date: 2017-09-18 12:46:58
 tags:
