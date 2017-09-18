@@ -18,4 +18,4 @@ Zukünftige Elektronische Marktkommunikation erfordert  hochflexible und individ
 <iframe width="560" height="315" src="https://www.youtube.com/embed/9kLfuIKDQdQ" frameborder="0" allowfullscreen></iframe>
 </html>
 
-Der Code ist die Regel. Im Video wird gezeigt, wie mit wenigen Schritten die Kommunikation zum Clearing und Settlement durchgeführt werden kann.
+Der Code ist die Regel. Im Video wird gezeigt, wie mit wenigen Schritten die Kommunikation zum Clearing und Settlement durchgeführt werden. Was früher hauptsächlich im Umfeld von EDI@Energy geleistet wurde, kann dank der Blockchain Technologie auf Konsens Mechanismen aufgebaut werden.
