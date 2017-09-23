@@ -43,7 +43,7 @@ Vertreten durch:
 - Stefan Thon (Berlin, Deutschland)
 - Thorsten Zoerner (Mauer, Deutschland)
 
-#### Verantwortlich für den Inhalt (gem. § 55 Abs. 2 RStV)
+### Verantwortlich für den Inhalt (gem. § 55 Abs. 2 RStV)
 blog.stromhaltig Limited
 c/o Thorsten Zoerner
 Suite 33854 Advantage Business Centre 132-134
