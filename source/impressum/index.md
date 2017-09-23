@@ -30,8 +30,6 @@ Telefon: +49 (0) 6226 9680090
 
 E-Mail: kontakt@stromdao.de
 
-USt. -IdNr.: DE301915043
-
 Handelsregister: HRB 728691 (Amtsgericht Mannheim)
 
 Vertreten durch:
