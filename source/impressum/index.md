@@ -16,9 +16,16 @@ Suite 33854 Advantage Business Centre
 Manchester, England, M4 6DE
 United Kingdom
 
-Telefon: +49 (0) 30 12084890
+### **STROM**DAO UG (haftungsbeschränkt)
+
+Gerhard Weiser Ring 29
+69256 Mauer
+Deutschland
+
+Telefon: +49 (0) 6226 9680090
 E-Mail: kontakt@stromdao.de
 USt. -IdNr.: DE301915043
+Handelsregister: HRB 728691 (Amtsgericht Mannheim)
 
 Vertreten durch:
 
