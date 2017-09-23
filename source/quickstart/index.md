@@ -83,6 +83,5 @@ Die Teilnehmeranzahl ist auf 5 begrenzt.
 <input name="campaign_id" id="campaign_id" type="hidden" value="c1da5c13-51b0-e3c7-7947-59c59a09d13e" />
 <input name="assigned_user_id" id="assigned_user_id" type="hidden" value="1ca4aab1-1297-e170-c66b-59b531c5ad6e" /> 
 <input name="moduleDir" id="moduleDir" type="hidden" value="Leads" />
-<input name="description" id="description" type="hidden" value="Kurs am 03.10.2017"/>	
 </form>
 </html>
