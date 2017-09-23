@@ -6,15 +6,22 @@ date: 2017-09-02 16:23:37
 ### **STROM**DAO Zweckgesellschaft
 
 Friedrichstr. 123
+
 10117 Berlin
+
 Deutschland
+
 
 ### **STROM**DAO Limited
 
 132-134 Great Ancoats Street
+
 Suite 33854 Advantage Business Centre
+
 Manchester, England, M4 6DE
+
 United Kingdom
+
 
 Registrierungs Nummer: [#10466125](https://beta.companieshouse.gov.uk/company/10466125)
 
