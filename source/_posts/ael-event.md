@@ -1,5 +1,5 @@
 ---
-title: Event - Utility 4.0 die Energiewelt von morgen
+title: Utility 4.0 die Energiewelt von morgen (Event)
 category: news
 date: 2017-09-24 15:39:31
 tags:
