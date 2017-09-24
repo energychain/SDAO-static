@@ -35,7 +35,7 @@ Gerhard Weiser Ring 29
 
 Deutschland
 
-Telefon: [+49 (0) 6226 9680090](tel:+496226968090)
+Telefon: [+49 (0) 6226 9680090](tel:+4962269680090)
 
 E-Mail: kontakt@stromdao.de
 
