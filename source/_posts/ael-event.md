@@ -15,7 +15,7 @@ Am 21. und 22.09.2017 fanden an der Universität Leipzig die [AEL Energy Days 20
 
 [Präsentation und die Workshop Unterlagen](http://docs.stromdao.de/presentations/20170922/)
 
-
+### Feedback eines Teilnehmers
 > Es ist faszinierend, wie schnell man das verstehen kann, auch wenn man mit Programmieren nichts am Hut hat.
 
 Das Feedback der Workshop Teilnehmer freut uns, da es zeigt, dass wenn man mit etwas echtem Code in Berührung zu kommt einen Quantensprung im Verständnis einer Technologie macht.
