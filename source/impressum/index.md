@@ -33,7 +33,7 @@ Gerhard Weiser Ring 29
 69256 Mauer
 Deutschland
 
-Telefon: +49 (0) 6226 9680090
+Telefon: [+49 (0) 6226 9680090](tel:+496226968090)
 
 E-Mail: kontakt@stromdao.de
 
