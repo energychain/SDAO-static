@@ -11,7 +11,7 @@ tags:
  - wissenschaft
 ---
 ![AEL Energy  Days](/assets/ael_event.png "Wie verändert die Blockchain die Datenverarbeitung?")
-Am 21. und 22.09.2017 fanden an der Universität Leipzig die [AEL Energy Days 2017 „Utility 4.0: die Energiewelt von morgen“](http://www.energieverein-leipzig.de/ael-energy-days/) statt. Die **STROM**DAO präsentierte eine einstündige Präsentation *Ein dezentrales Konsenssystem für Energiemärkte* vor und hielt mit einigen Beteiligten einen 3 stündigen Workshop.
+Am 21. und 22.09.2017 fanden an der Universität Leipzig die [AEL Energy Days 2017 „Utility 4.0: die Energiewelt von morgen“](http://www.energieverein-leipzig.de/ael-energy-days/) statt. Die **STROM**DAO präsentierte eine einstündige Präsentation *Ein dezentrales Konsenssystem für Energiemärkte* vor den Teilnehmern und hielt mit Interessierten einen 3 stündigen Workshop, der sich an den [QuickStart für Blockchain in der Energiewirtschaft](/quickstart/) orientiert.
 
 [Präsentation und die Workshop Unterlagen](http://docs.stromdao.de/presentations/20170922/)
 
