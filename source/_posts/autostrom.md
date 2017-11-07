@@ -1,12 +1,11 @@
-
 ---
 title: Konzept Autostrom
 category: Scenarios
 date: 2017-11-07 10:15:36
 tags: Konzepte
-- digitalisierung
-- Elektromobilität
-- energiewirtschaft
+ - digitalisierung
+ - Elektromobilität
+ - energiewirtschaft
 ---
 
 ![Roadster charging](https://i.pinimg.com/736x/94/a9/02/94a902567b68272c83d53eb20af61a2e--electric-vehicle-electric-cars.jpg "Logo Title Text 1")
