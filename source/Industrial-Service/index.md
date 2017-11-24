@@ -39,7 +39,7 @@ E-Autos? Mit uns lautet Ihre Antwort: na klar! Aber kostengünstig, transparent 
 <HTML>
 <div class="row">
 <div class="col-md-6">
-<img src="/assets/stefan_thon.png" alt=""Industrial Services - Manuel Utz">
+<img src="/assets/manuel_utz.png" alt=""Industrial Services - Manuel Utz">
 </div>
 <div class="col-md-6"><strong>Manuel Utz</strong><br/>
 <a href="mailto:manuel.utz@stromdao.com">manuel.utz@stromdao.com</a><br/>
