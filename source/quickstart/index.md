@@ -64,13 +64,10 @@ Die Teilnehmeranzahl ist auf 5 begrenzt.
     <label for="description" class="col-sm-4 control-label">Wunschtermin</label>
     <div class="col-sm-8">
 		<select class="form-control" id="description" name="description">
-			<option>28.09.2017 14:00</option>
-			<option>05.10.2017 10:00</option>
-			<option>09.10.2017 10:00</option>
-			<option>09.10.2017 15:00</option>
-			<option>13.10.2017 10:00</option>
-			<option>16.10.2017 10:00</option>
-			<option>17.10.2017 10:00</option>
+			<option>13.12.2017 14:00</option>
+			<option>20.12.2017 10:00</option>
+			<option>16.01.2017 10:00</option>
+			<option>23.01.2017 15:00</option>			
 		</select>      
     </div>
 </div>
