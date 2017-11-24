@@ -31,7 +31,7 @@ Mit den **Business Services** unterstützen wir Sie im Rahmen von Workshops oder
 </div>
 <div class="col-md-6"><strong>Stefan Thon</strong><br/>
 <a href="mailto:stefan.thon@stromdao.com">stefan.thon@stromdao.com</a><br/>
-<a href="tel:+493012084890">+49 (0) 30-12084890</a>
+<a href="tel:+4962269680092">+49 (0) 6226-9680092</a>
 </div>
 </div>
 </HTML>

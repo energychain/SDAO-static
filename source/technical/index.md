@@ -13,7 +13,7 @@ Im Rahmen einer Open-Source Strategie wurden speziell auf den Wandel in der Ener
 
 ## Werkzeuge
 - Development und Integrations Prozess
-- Fury.Network
+- [Fury.Network](https://fury.network)
 - Cloud Infrastructure
 
 ## Ihr Anprechpartner
@@ -25,7 +25,7 @@ Im Rahmen einer Open-Source Strategie wurden speziell auf den Wandel in der Ener
 </div>
 <div class="col-md-6"><strong>Thorsten Zoerner</strong><br/>
 <a href="mailto:thorsten.zoerner@stromdao.com">thorsten.zoerner@stromdao.com</a><br/>
-<a href="tel:+493012084890">+49 (0) 30-12084890</a>
+<a href="tel:+4962269680091">+49 (0) 6226-9680091</a>
 </div>
 </div>
 </HTML>

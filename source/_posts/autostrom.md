@@ -1,6 +1,6 @@
 ---
 title: Konzept Autostrom
-category: Scenarios
+category: news
 date: 2017-11-07 10:15:36
 tags: Konzepte
  - digitalisierung
