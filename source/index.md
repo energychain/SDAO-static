@@ -18,7 +18,6 @@ ___
 		</form>
 <hr/>
 <h3>Autostrom @ Home</h3>
-
 		<div style="display:block;">
 		<a href="https://autostrom.stromdao.de/" title="Autostrom ohne Abschaltzeiten" ><img src="/assets/ev.png" style="float:left;margin:5px;"></a>
 		<p>Ein Stromprodukt für Privathaushalte, inklusive Spezialtarif für Ihr Elektrofahrzeug mit Prämie für <a href="https://autostrom.stromdao.de/articles/netzdienlichkeit" title="Hintergrund:Prämie für Netzdienlichkeit">Netzdienlichkeit</a>.</p>						
