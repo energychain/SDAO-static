@@ -17,10 +17,13 @@ ___
 		</div>	
 		</form>
 <hr/>
-<h3>Autostrom</h3>
-<a href="https://autostrom.stromdao.de/" title="Autostrom ohne Abschaltzeiten" ><img src="/assets/ev.png" style="float:left;margin:5px;"></a>
-		<div style="display:block">
-		<p>Ein Stromprodukt für Privathaushalte, inklusive Spezialtarif für Ihr Elektrofahrzeug mit Prämie für <a href="https://autostrom.stromdao.de/articles/netzdienlichkeit" title="Hintergrund:Prämie für Netzdienlichkeit">Netzdienlichkeit</a>.</p>				
+<h3>Autostrom @ Home</h3>
+
+		<div style="display:block;">
+		<a href="https://autostrom.stromdao.de/" title="Autostrom ohne Abschaltzeiten" ><img src="/assets/ev.png" style="float:left;margin:5px;"></a>
+		<p>Ein Stromprodukt für Privathaushalte, inklusive Spezialtarif für Ihr Elektrofahrzeug mit Prämie für <a href="https://autostrom.stromdao.de/articles/netzdienlichkeit" title="Hintergrund:Prämie für Netzdienlichkeit">Netzdienlichkeit</a>.</p>						
+		</div>
+		<div style="display:block;margin-bottom:30px;">
 			<form action="https://autostrom.stromdao.de/" method="GET">
 			<div class="form-group">				
 				<div class="input-group">
@@ -33,6 +36,7 @@ ___
 			</div>	
 			</form>
 		</div>
+		<hr/>
 </html>
 
 ### Blockchain für die Energiewirtschaft
