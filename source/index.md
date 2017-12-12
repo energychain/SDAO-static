@@ -9,7 +9,7 @@ ___
 		<div class="form-group">		    
 		    <div class="input-group">
 				<span class="input-group-addon" id="sizing-addon2">Ihre Postleitzahl</span>
-				<input type="text" name="plz" id="plz" size="5" class="form-control terms">
+				<input type="text" name="plz" id="plz"class="form-control"/>
 				<span class="input-group-btn">
 				<button id="getTarif" type="submit" class="btn btn-danger" style="margin-top:10px;">Tarif abrufen</button>
 		    </span>
@@ -25,7 +25,7 @@ ___
 			<div class="form-group">				
 				<div class="input-group">
 					<span class="input-group-addon" id="sizing-addon2">Ihre Postleitzahl</span>
-					<input type="text" name="plz" id="plz" size="5" class="form-control terms">
+					<input type="text" name="plz" id="plz" class="form-control">
 					<span class="input-group-btn">
 					<button id="getTarif" type="submit" class="btn btn-danger" style="margin-top:10px;">Angebot abrufen</button>				 
 					</span>
