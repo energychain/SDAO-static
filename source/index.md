@@ -8,19 +8,28 @@ ___
 		<form action="/tarif/" method="GET">
 		<div class="form-group">
 		    <label for="plz">Ihre Postleitzahl</label>
+		    <div class="input-group">
 		    <input type="text" name="plz" id="plz" size="5" class="form-control terms">
+		    <span class="input-group-btn">
 		    <button id="getTarif" type="submit" class="btn btn-danger" style="margin-top:10px;">Tarif abrufen</button>
+		    </span>
+		    </div>
 		</div>	
 		</form>
 <hr/>
+<h3>Autostrom</h3>
 <a href="https://autostrom.stromdao.de/" title="Autostrom ohne Abschaltzeiten" ><img src="/assets/ev.png" style="float:left;margin:5px;"></a>
 		<div style="display:block">
-		<p>Autostrom ist ein Stromprodukt für Privathaushalte, inklusive Spezialtarif für Ihr Elektrofahrzeug mit Prämie für <a href="https://autostrom.stromdao.de/articles/netzdienlichkeit" title="Hintergrund:Prämie für Netzdienlichkeit">Netzdienlichkeit</a>.</p>				
+		<p>Ein Stromprodukt für Privathaushalte, inklusive Spezialtarif für Ihr Elektrofahrzeug mit Prämie für <a href="https://autostrom.stromdao.de/articles/netzdienlichkeit" title="Hintergrund:Prämie für Netzdienlichkeit">Netzdienlichkeit</a>.</p>				
 			<form action="https://autostrom.stromdao.de/" method="GET">
 			<div class="form-group">
 				<label for="plz">Ihre Postleitzahl</label>
+				<div class="input-group">
 				<input type="text" name="plz" id="plz" size="5" class="form-control terms">
-				<button id="getTarif" type="submit" class="btn btn-danger" style="margin-top:10px;">Angebot abrufen</button>
+				<span class="input-group-btn">
+				<button id="getTarif" type="submit" class="btn btn-danger" style="margin-top:10px;">Angebot abrufen</button>				 
+				</span>
+				</div>
 			</div>	
 			</form>
 		</div>
