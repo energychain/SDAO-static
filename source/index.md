@@ -6,12 +6,12 @@ ___
 <html>		
 		<p>Die <strong>STROM</strong>DAO bietet den ersten Stromtarif, der vollständig mit der Blockchain-Technologie von Stromkunden entwickelt wurde.</p>
 		<form action="/tarif/" method="GET">
-		<div class="form-group">
-		    <label for="plz">Ihre Postleitzahl</label>
+		<div class="form-group">		    
 		    <div class="input-group">
-		    <input type="text" name="plz" id="plz" size="5" class="form-control terms">
-		    <span class="input-group-btn">
-		    <button id="getTarif" type="submit" class="btn btn-danger" style="margin-top:10px;">Tarif abrufen</button>
+				<span class="input-group-addon" id="sizing-addon2">Ihre Postleitzahl</span>
+				<input type="text" name="plz" id="plz" size="5" class="form-control terms">
+				<span class="input-group-btn">
+				<button id="getTarif" type="submit" class="btn btn-danger" style="margin-top:10px;">Tarif abrufen</button>
 		    </span>
 		    </div>
 		</div>	
@@ -22,13 +22,13 @@ ___
 		<div style="display:block">
 		<p>Ein Stromprodukt für Privathaushalte, inklusive Spezialtarif für Ihr Elektrofahrzeug mit Prämie für <a href="https://autostrom.stromdao.de/articles/netzdienlichkeit" title="Hintergrund:Prämie für Netzdienlichkeit">Netzdienlichkeit</a>.</p>				
 			<form action="https://autostrom.stromdao.de/" method="GET">
-			<div class="form-group">
-				<label for="plz">Ihre Postleitzahl</label>
+			<div class="form-group">				
 				<div class="input-group">
-				<input type="text" name="plz" id="plz" size="5" class="form-control terms">
-				<span class="input-group-btn">
-				<button id="getTarif" type="submit" class="btn btn-danger" style="margin-top:10px;">Angebot abrufen</button>				 
-				</span>
+					<span class="input-group-addon" id="sizing-addon2">Ihre Postleitzahl</span>
+					<input type="text" name="plz" id="plz" size="5" class="form-control terms">
+					<span class="input-group-btn">
+					<button id="getTarif" type="submit" class="btn btn-danger" style="margin-top:10px;">Angebot abrufen</button>				 
+					</span>
 				</div>
 			</div>	
 			</form>
