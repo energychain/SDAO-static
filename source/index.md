@@ -8,11 +8,11 @@ ___
 		<form action="/tarif/" method="GET">
 		<div class="form-group">		    
 		    <div class="input-group">
-				<span class="input-group-addon" id="sizing-addon2">Ihre Postleitzahl</span>
+				<span class="input-group-addon">Ihre Postleitzahl</span>
 				<input type="text" name="plz" id="plz"class="form-control"/>
 				<span class="input-group-btn">
-				<button id="getTarif" type="submit" class="btn btn-danger" style="margin-top:10px;">Tarif abrufen</button>
-		    </span>
+				<button id="getTarif" type="submit" class="btn btn-danger">Tarif abrufen</button>
+				</span>
 		    </div>
 		</div>	
 		</form>
@@ -24,10 +24,10 @@ ___
 			<form action="https://autostrom.stromdao.de/" method="GET">
 			<div class="form-group">				
 				<div class="input-group">
-					<span class="input-group-addon" id="sizing-addon2">Ihre Postleitzahl</span>
+					<span class="input-group-addon">Ihre Postleitzahl</span>
 					<input type="text" name="plz" id="plz" class="form-control">
 					<span class="input-group-btn">
-					<button id="getTarif" type="submit" class="btn btn-danger" style="margin-top:10px;">Angebot abrufen</button>				 
+					<button id="getTarif" type="submit" class="btn btn-danger">Angebot abrufen</button>				 
 					</span>
 				</div>
 			</div>	
