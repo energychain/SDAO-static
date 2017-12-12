@@ -12,10 +12,8 @@ ___
 		    <button id="getTarif" type="submit" class="btn btn-danger" style="margin-top:10px;">Tarif abrufen</button>
 		</div>	
 		</form>
-</html>		
-___
-
-<html>		
+<hr/>
+<a href="https://autostrom.stromdao.de/" title="Autostrom ohne Abschaltzeiten" ><img src="/assets/ev.png" style="float:right;margin:5px;"></a>
 		<p>Autostrom ist ein Stromprodukt für Privathaushalte, inklusive Spezialtarif für Ihr Elektrofahrzeug mit Prämie für <a href="https://autostrom.stromdao.de/articles/netzdienlichkeit" title="Hintergrund:Prämie für Netzdienlichkeit">Netzdienlichkeit</a>.</p>
 		<form action="https://autostrom.stromdao.de/" method="GET">
 		<div class="form-group">
