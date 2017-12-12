@@ -104,27 +104,13 @@ function getTarif() {
 	$('#tarifinfo').hide();
 	$('#getTarif').attr('disabled','disabled');
 	if($('#plz').val().length!=5) return;
-	$.get( api+"prices/"+$('#plz').val()+"/3020?token="+token,function(data) {		
+	$.get( "https://stromdao.de/crm/service/tarif/?plz="+$('#plz').val()+"&k=1337&token="+token,function(data) {		
 		
 		data=JSON.parse(data);
-		if(data.Price.length<1) {="" location.href="https://kleinerracker.de/tarife-iframe?Reseller=c3ec23a16304f8d6c8692dcac2343c05&Dynamic=1&products=PP_dynamisch_eingeschr_3;&a=;&b=PPE02V06;&c=PPE10V01;&d=PPE07V02;&e=PPE04V06;&f=PPE05V04;&g=PPE03V01;&h=PPE08V01;&i=PPE01V02;&j=PPE12V01;&k=PPE11V0001;&l=PPE13V01;&m=PPE14V0;&n=PPE15V0;&o=PPE16V0;&z=;" ;="" }="" $.each(data.price,function(a,b)="" $('#ap').html((b.upgross).tolocalestring());="" $('#ap').attr('data-p',b.upgross);="" $('#gp').html((math.round(b.bpgross*100)="" 100).tolocalestring());="" $('#gp').attr('data-p',math.round(b.bpgross*100)="" 100);="" $('#city').html(b.city);="" $('#tarifinfo').show();="" });="" var="" terms="<table class='table table-striped'>" terms+="<tr><th>" +data.elements["ppe01"].name+"<="" th=""><td>"+data.Elements["PPE01"].Value+"</td>";		
-		terms+="<tr><th>"+data.Elements["PPE02"].Name+"</th><td>"+data.Elements["PPE02"].Value+"</td></tr>";	
-		terms+="<tr><th>"+data.Elements["PPE03"].Name+"</th><td>"+data.Elements["PPE03"].Value+"</td></tr>";
-		terms+="<tr><th>"+data.Elements["PPE04"].Name+"</th><td>"+data.Elements["PPE04"].Value+"</td></tr>";		
-		terms+="<tr><th>"+data.Elements["PPE05"].Name+"</th><td>"+data.Elements["PPE05"].Value+"</td></tr>";	
-		terms+="<tr><th>"+data.Elements["PPE07"].Name+"</th><td>"+data.Elements["PPE07"].Value+"</td></tr>";			
-		terms+="";
-		terms+="<input type="hidden" class="terms" id=""+data.Elements["PPE01"].Name+"" value=""+data.Elements["PPE01"].Value+"">";
-		terms+="<input type="hidden" class="terms" id=""+data.Elements["PPE02"].Name+"" value=""+data.Elements["PPE02"].Value+"">";
-		terms+="<input type="hidden" class="terms" id=""+data.Elements["PPE03"].Name+"" value=""+data.Elements["PPE03"].Value+"">";
-		terms+="<input type="hidden" class="terms" id=""+data.Elements["PPE04"].Name+"" value=""+data.Elements["PPE04"].Value+"">";
-		terms+="<input type="hidden" class="terms" id=""+data.Elements["PPE05"].Name+"" value=""+data.Elements["PPE05"].Value+"">";
-		terms+="<input type="hidden" class="terms" id=""+data.Elements["PPE07"].Name+"" value=""+data.Elements["PPE07"].Value+"">";
-		terms+="<input type="hidden" class="terms" id="arbeitspreis" value=""+$(" #ap').attr('data-p')+"'="">";
+		if(data.city.length<1) {="" location.href="https://kleinerracker.de/tarife-iframe?Reseller=c3ec23a16304f8d6c8692dcac2343c05&Dynamic=1&products=PP_dynamisch_eingeschr_3;&a=;&b=PPE02V06;&c=PPE10V01;&d=PPE07V02;&e=PPE04V06;&f=PPE05V04;&g=PPE03V01;&h=PPE08V01;&i=PPE01V02;&j=PPE12V01;&k=PPE11V0001;&l=PPE13V01;&m=PPE14V0;&n=PPE15V0;&o=PPE16V0;&z=;" ;="" }="" $('#ap').html(data.ap);="" $('#ap').attr('data-p',data.ap);="" $('#mp').html(data.gp);="" $('#gp').html(data.gp*12);="" $('#gp').attr('data-p',(data.gp*12)+",00");="" $('#city').html(data.city);="" $('#tarifinfo').show();="" var="" terms="" terms+="<input type='hidden' class='terms' id='arbeitspreis' value='" +$('#ap').attr('data-p')+"'="">";
 		terms+="<input type="hidden" class="terms" id="grundpreis" value=""+$(" #gp').attr('data-p')+"'="">";
 		$('#terms').html(terms);
-		$('#getTarif').removeAttr('disabled');
-		
+		$('#getTarif').removeAttr('disabled');		
 	});	
 }
 
