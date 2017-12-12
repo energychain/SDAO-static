@@ -14,7 +14,9 @@ ___
 		</form>
 <hr/>
 <a href="https://autostrom.stromdao.de/" title="Autostrom ohne Abschaltzeiten" ><img src="/assets/ev.png" style="float:left;margin:5px;"></a>
+		<div style="display:block">
 		<p>Autostrom ist ein Stromprodukt für Privathaushalte, inklusive Spezialtarif für Ihr Elektrofahrzeug mit Prämie für <a href="https://autostrom.stromdao.de/articles/netzdienlichkeit" title="Hintergrund:Prämie für Netzdienlichkeit">Netzdienlichkeit</a>.</p>
+				
 		<form action="https://autostrom.stromdao.de/" method="GET">
 		<div class="form-group">
 		    <label for="plz">Ihre Postleitzahl</label>
@@ -22,6 +24,7 @@ ___
 		    <button id="getTarif" type="submit" class="btn btn-danger" style="margin-top:10px;">Angebot abrufen</button>
 		</div>	
 		</form>
+		</div>
 </html>
 
 ### Blockchain für die Energiewirtschaft
