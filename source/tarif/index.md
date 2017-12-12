@@ -14,7 +14,7 @@ date: 2017-09-02 16:47:07
 				<div class="col-md-6">
 					<h3>Arbeitspreis</h3>
 					<h2 id="ap"></h2>
-					<p>Cent je Kilo-Watt-Stunde</p>
+					<p>je Kilo-Watt-Stunde</p>
 				</div>
 				<div class="col-md-6">					
 					<h3>Grundpreis</h3>

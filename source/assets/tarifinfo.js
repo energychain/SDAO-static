@@ -111,11 +111,11 @@ function getTarif() {
 			location.href="https://kleinerracker.de/tarife-iframe?Reseller=c3ec23a16304f8d6c8692dcac2343c05&Dynamic=1&products=PP_dynamisch_eingeschr_3;&a=;&b=PPE02V06;&c=PPE10V01;&d=PPE07V02;&e=PPE04V06;&f=PPE05V04;&g=PPE03V01;&h=PPE08V01;&i=PPE01V02;&j=PPE12V01;&k=PPE11V0001;&l=PPE13V01;&m=PPE14V0;&n=PPE15V0;&o=PPE16V0;&z=;";
 		}
 	
-				$('#ap').html(data.ap);
+				$('#ap').html("0,"+data.ap+" €");
 				$('#ap').attr('data-p',data.ap);
 				$('#mp').html(data.gp);
-				$('#gp').html(data.gp*12);
-				$('#gp').attr('data-p',(data.gp*12)+",00");
+				$('#gp').html(data.gp*12+",00 €");
+				$('#gp').attr('data-p',(data.gp*12));
 				$('#city').html(data.city);
 				$('#tarifinfo').show();	
 		
