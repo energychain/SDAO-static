@@ -23,7 +23,7 @@ date: 2017-09-02 16:47:07
 				</div>						
 			</div>
 			<div>
-			<table class="table table-striped"><tbody><tr><th>Energie-Mix</th><td>Ökostrom</td></tr><tr><th>eingeschränkte Preisgarantie</th><td>3 Monate</td></tr><tr><th>Zahlung Abschläge</th><td>monatlich</td></tr><tr><th>Vertragslaufzeit</th><td>3 Monate</td></tr><tr><th>Vertragsverlängerung</th><td>3 Monate</td></tr><tr><th>Kündigungsfrist</th><td>1 Woche</td></tr></tbody></table>
+			<table class="table table-striped"><tbody><tr><th>Energie-Mix</th><td>Ökostrom</td></tr><tr><th>eingeschränkte Preisgarantie</th><td>3 Monate</td></tr><tr><th>Zahlung Abschläge</th><td>monatlich</td></tr><tr><th>Vertragslaufzeit</th><td>3 Monate</td></tr><tr><th>Vertragsverlängerung</th><td>3 Monate</td></tr><tr><th>Kündigungsfrist</th><td>1 Woche</td></tr><tr><th><a href='https://stromkonto.net/' target='_blank'>Stromkonto</a></th><td>inklusive</td></tr></tbody></table>
 			</div>
 			<div id="terms"></div>
 			<hr/>		
@@ -35,7 +35,15 @@ date: 2017-09-02 16:47:07
 				 <div class="form-group">
 					<label for="profileNachname">Nachname</label>
 					<input type="text" class="form-control terms" id="profileNachname" placeholder="Ihr Nachname">
+				 </div>		
+				<div class="form-group">
+					<label for="street">Straße und Hausnummer</label>
+					<input type="text" class="form-control terms" id="street" placeholder="Lieferanschrift">
 				 </div>									 
+				<div class="form-group">
+					<label for="street">Straße und Hausnummer</label>
+					<input type="text" class="form-control terms" id="street" placeholder="Lieferanschrift">
+				 </div>									  
 				 <div class="form-group">
 					<label for="profileEmail">E-Mail</label>
 					<input type="email" class="form-control terms" id="profileEmail" placeholder="Ihre Email Anschrift">

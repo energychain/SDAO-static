@@ -45,60 +45,86 @@ function loadOrder(ipfsHash) {
 	});		
 }
 function orderNow() {
-	var targetkey="-----BEGIN PUBLIC KEY-----\n";
-	targetkey+="MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCW7sa/HfTmCSD/68ZZmEz50X04\n";
-	targetkey+="oiA2LYGirgOr0OUBnqokDjQkAzk+zIJ8Te3Xe7GaeunDhJzilzwQkS51JOuHoKvk\n";
-	targetkey+="NlcXyqGUZtafevkeg0qYZDMmJjRg2X/EBlXY8UyWwU4dp6zW446LRbrn7JvcIhqp\n";
-	targetkey+="rAHwYD84zRynHqXn/QIDAQAB\n";
-	targetkey+="-----END PUBLIC KEY-----";
-	var extkey = node._key(targetkey);
-	var terms={};
-	var sharedSecret={};
-	sharedSecret.account=node.wallet.address;
-	sharedSecret.secret=node.wallet.privateKey;
-	sharedSecret.RSAPublicKey=node.RSAPublicKey;
 	
-	$.each($('.terms'),function(a,b) {
-			terms[b.id]=$(b).val();	
-	});	
-	var content= extkey.encrypt(JSON.stringify(terms),'base64');
-	var shared=extkey.encrypt(JSON.stringify(sharedSecret),'base64');
-	
-	targetkey=node.RSAPublicKey;
-	extkey = node._key(targetkey);
-	var private= extkey.encrypt(JSON.stringify(terms),'base64');
-	
-	
-	$.post( api+"api/auth",{extid:node.wallet.address,secret:node.wallet.privateKey.substr(0,10)},function( data ) {
-		data=JSON.parse(data);		
-		token=data.token;	
+	var data = {};
+    $.each($("input"),function(i,v) { data[$(v).attr('id')]=$(v).val(); });
+    $.each($("select"),function(i,v) { data[$(v).attr('id')]=$(v).val(); });    
+    data.primary_address_postalcode=$('#plz').val();
+    data.primary_address_city=$('#city').html();
+    data.email1=$('#email').val();
+    data.first_name=$('#profileVorname').val();
+    data.last_name=$('#profileNachname').val();
+    data.phone_mobile=$('#profilePhone').val();
+    // a514ec2d-b44e-7fbc-6e06-5a289ae752c4
+    data.campaign_id="7a3ec70c-6a12-2bd4-dc1d-5a305dd5e41a";
+    // ST 44671895-c6d0-be81-447e-59b531abdad1
+    // TZ 1ca4aab1-1297-e170-c66b-59b531c5ad6e
+    data.assigned_user_id="1ca4aab1-1297-e170-c66b-59b531c5ad6e";
+    data.moduleDir="Contacts";
+    data.lead_source="Campaign";
+    data.ap=$('#ap').attr('data-p');
+    data.gp=$('#gp').attr('data-p');
+    data.description=JSON.stringify(data);
+    $.post("https://stromdao.de/crm/index.php?entryPoint=WebToPersonCapture",data).done(function(k) {
+    
+			
+			var targetkey="-----BEGIN PUBLIC KEY-----\n";
+			targetkey+="MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCW7sa/HfTmCSD/68ZZmEz50X04\n";
+			targetkey+="oiA2LYGirgOr0OUBnqokDjQkAzk+zIJ8Te3Xe7GaeunDhJzilzwQkS51JOuHoKvk\n";
+			targetkey+="NlcXyqGUZtafevkeg0qYZDMmJjRg2X/EBlXY8UyWwU4dp6zW446LRbrn7JvcIhqp\n";
+			targetkey+="rAHwYD84zRynHqXn/QIDAQAB\n";
+			targetkey+="-----END PUBLIC KEY-----";
+			var extkey = node._key(targetkey);
+			var terms={};
+			var sharedSecret={};
+			sharedSecret.account=node.wallet.address;
+			sharedSecret.secret=node.wallet.privateKey;
+			sharedSecret.RSAPublicKey=node.RSAPublicKey;
+			
+			$.each($('.terms'),function(a,b) {
+					terms[b.id]=$(b).val();	
+			});	
+			var content= extkey.encrypt(JSON.stringify(terms),'base64');
+			var shared=extkey.encrypt(JSON.stringify(sharedSecret),'base64');
+			
+			targetkey=node.RSAPublicKey;
+			extkey = node._key(targetkey);
+			var private= extkey.encrypt(JSON.stringify(terms),'base64');
+			
+			
+			
+			
+			$.post( api+"api/auth",{extid:node.wallet.address,secret:node.wallet.privateKey.substr(0,10)},function( data ) {
+				data=JSON.parse(data);		
+				token=data.token;	
 
-		files=[]
-		files.push( {
-			 name:"vertrag.provider.rsa.txt",
-			 content:btoa(content)
-		});
-		files.push( {
-			 name:"vertrag.consumer.rsa.txt",
-			 content:btoa(private)
-		});	
-		files.push( {
-			 name:"shared.rsa.txt",
-			 content:btoa(shared)
-		});		
-		files.push( {
-			 name:"node.info.txt",
-			 content:btoa(JSON.stringify({account:node.wallet.address,pk:node.wallet.privateKey,rsa:node.RSAPublicKey}))
-		});
-		
-		$.post(api+"api/ipfs/set?token="+token,{bucket:"liefervertrag",obj:JSON.stringify(files),token:token},function(data) {
-					data=JSON.parse(data);			
-					console.log("Gespeichert unter",data.ipfsroot);			
-					$('#tarifinfo').hide();
-					$('#txhash').html(data.ipfsroot);
-					$('#danke').show();						
-		});	
-	});	
+				files=[]
+				files.push( {
+					 name:"vertrag.provider.rsa.txt",
+					 content:btoa(content)
+				});
+				files.push( {
+					 name:"vertrag.consumer.rsa.txt",
+					 content:btoa(private)
+				});	
+				files.push( {
+					 name:"shared.rsa.txt",
+					 content:btoa(shared)
+				});		
+				files.push( {
+					 name:"node.info.txt",
+					 content:btoa(JSON.stringify({account:node.wallet.address,pk:node.wallet.privateKey,rsa:node.RSAPublicKey}))
+				});
+				
+				$.post(api+"api/ipfs/set?token="+token,{bucket:"liefervertrag",obj:JSON.stringify(files),token:token},function(data) {
+							data=JSON.parse(data);			
+							console.log("Gespeichert unter",data.ipfsroot);			
+							$('#tarifinfo').hide();
+							$('#txhash').html(data.ipfsroot);
+							$('#danke').show();						
+				});	
+			});	
+	});
 }
 function getTarif() {
 	$('#tarifinfo').hide();
@@ -113,7 +139,7 @@ function getTarif() {
 	
 				$('#ap').html("0,"+data.ap+" €");
 				$('#ap').attr('data-p',data.ap);
-				$('#mp').html(data.gp);
+				$('#mp').html(data.gp+",00 €");
 				$('#gp').html(data.gp*12+",00 €");
 				$('#gp').attr('data-p',(data.gp*12));
 				$('#city').html(data.city);
