@@ -25,7 +25,7 @@ date: 2017-09-02 16:47:07
 			<div>
 			<table class="table table-striped"><tbody><tr><th>Energie-Mix</th><td>Ökostrom</td></tr><tr><th>eingeschränkte Preisgarantie</th><td>3 Monate</td></tr><tr><th>Zahlung Abschläge</th><td>monatlich</td></tr><tr><th>Vertragslaufzeit</th><td>3 Monate</td></tr><tr><th>Vertragsverlängerung</th><td>3 Monate</td></tr><tr><th>Kündigungsfrist</th><td>1 Woche</td></tr><tr><th><a href='https://stromkonto.net/' target='_blank'>Stromkonto</a></th><td>inklusive</td></tr></tbody></table>
 			</div>
-			<div id="terms"></div>
+			<div id="terms" style="display:none"></div>
 			<hr/>		
 			<h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Vertragsnehmer/Stromkunde</h2>			
 				 <div class="form-group">
