@@ -17,7 +17,7 @@ ___
 		</div>	
 		</form>
 <hr/>
-<h3>Autostrom @ Home</h3>
+<h3><a href="https://autostrom.stromdao.de/">Autostrom @ Home</a></h3>
 		<div style="display:block;">
 		<a href="https://autostrom.stromdao.de/" title="Autostrom ohne Abschaltzeiten" ><img src="/assets/ev.png" style="float:left;margin:5px;"></a>
 		<p>Ein Stromprodukt für Privathaushalte, inklusive Spezialtarif für Ihr Elektrofahrzeug mit Prämie für <a href="https://autostrom.stromdao.de/articles/netzdienlichkeit" title="Hintergrund:Prämie für Netzdienlichkeit">Netzdienlichkeit</a>.</p>						
@@ -26,10 +26,10 @@ ___
 			<form action="https://autostrom.stromdao.de/" method="GET">
 			<div class="form-group">				
 				<div class="input-group">
-					<span class="input-group-addon">Ihre Postleitzahl</span>
+					<span class="input-group-addon">Postleitzahl</span>
 					<input type="text" name="plz" id="plz" class="form-control">
 					<span class="input-group-btn">
-					<button id="getTarif" type="submit" class="btn btn-danger">Angebot abrufen</button>				 
+					<button id="getTarif" type="submit" class="btn btn-danger">zum Angebot</button>				 
 					</span>
 				</div>
 			</div>	
