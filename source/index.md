@@ -44,10 +44,10 @@ ___
 
 ### Blockchain für die Energiewirtschaft
 Das [**STROM**DAO Business Object](https://github.com/energychain/StromDAO-BusinessObject) verbindet Blockchain basierte Anwendungen mit der digitalisierten 
-Energiewende. Szenarien für Prosumer, P2P oder lokale Strommärkte sowie dem Smartmeter Roll-Out, können in Minuten [entwickelt und verprobt](https://fury.network/) werden.
+Energiewende. Szenarien für Prosumer, P2P oder lokale Strommärkte sowie dem Smartmeter Roll-Out, können in Minuten [entwickelt und verprobt](https://fury.network/) werden. 
 
 ___
 
 ### Ihr Weg zur **STROM**DAO
-Telefon: +49 (0)30 120 848 90
+Telefon: +49 (0)6226 9680090
 Email: kontakt@stromdao.de
