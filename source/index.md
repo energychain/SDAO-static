@@ -3,7 +3,7 @@ title: Digitalisierung der Energiewende
 date: 2017-09-02 16:47:07
 ---
 ___
-Wir bauen digitale Infrastruktur – für deinen Start in den Energiemarkt! Wir von der STROMDAO sind angetreten damit du den Mehrwert der Digitalisierung an deiner Steckdose und schon weit davor erlebst. Und zwar egal ob du in einer WG wohnst, ein Prosumer mit PV-Anlage bist oder  gerne mit deinem E-Auto zur Arbeit fährst. Mach dein Ding!
+Wir bauen digitale Infrastruktur – für deinen Start in den Energiemarkt! Wir von der STROMDAO sind angetreten damit Sie den Mehrwert der Digitalisierung an Ihrer Steckdose und schon weit davor erleben. Und zwar egal ob Sie in im Eigenenheim wohnen, ein Prosumer mit PV-Anlage sind oder gerne mit dem E-Auto zur Arbeit fahren. Profitieren Sie mit uns!
 
 **Energie.Digital.Erleben.**
 <html>				
